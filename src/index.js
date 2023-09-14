@@ -1,31 +1,16 @@
 import ReactDOM from "react-dom";
-import { useState, useRef } from 'react';
-import AddToCart from './addCart';
+import { Provider } from "react-redux";
+import configureStore from './store/configureStore';
+import { App } from './components/app';
 
-const App = () => {
-    const [items, setState] = useState(0)
-    const persistValue = useRef();
+const store = configureStore();
 
-    if (items == 0) {
-        persistValue.current = 0;
-    }
-
-    const additionToCart = () => {
-        persistValue.current = persistValue.current + 1;
-        setState(persistValue.current)
-    }
-
+const Umbrella = () => {
     return (
-        <div className="container">
-            Hello ! This is a test output &nbsp;
-            {items > 0 ? <sup>{items}</sup> : undefined}
-            <br />
-            <br />
-            <AddToCart
-                additionToCart={additionToCart}
-            />
-        </div>
+        <Provider store={store}>
+            <App />
+        </Provider>
     )
 }
 
-ReactDOM.render(<App />, document.getElementById('reactApp'));
+ReactDOM.render(<Umbrella />, document.getElementById('reactApp'));
