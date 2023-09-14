@@ -14,7 +14,8 @@ module.exports = {
         static: path.join(__dirname, 'public'),
         open: false,
         hot: true,
-        liveReload: true
+        liveReload: true,
+        historyApiFallback: true
     },
     resolve: {
         extensions: ['.js', '.jsx', '.json']

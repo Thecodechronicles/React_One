@@ -5,7 +5,7 @@ import { useEffect, useRef } from 'react';
 import { addToCart, addImages } from '../actions/cartActions';
 import { useDispatch } from 'react-redux';
 
-export const App = () => {
+export const Upfront = () => {
     const dispatch = useDispatch();
     // const persistArr = useRef();
     const arr = [];
@@ -31,11 +31,11 @@ export const App = () => {
 
     return (
         <div className="container">
-            <CartDisplay />
+            {/* <CartDisplay /> */}
             <Images />
             <br />
             <br />
-            <AddToCart />
+            {/* <AddToCart /> */}
         </div>
     )
 }

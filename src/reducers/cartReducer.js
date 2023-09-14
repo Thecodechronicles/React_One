@@ -1,5 +1,5 @@
 
-export const cartReducer = (state = { items: '', imgArr: [] }, action) => {
+export const cartReducer = (state = { items: 0, imgArrProps: [], fullsizeImage: '' }, action) => {
     switch (action.type) {
         case 'ADD_ITEMS':
             return {
@@ -9,8 +9,13 @@ export const cartReducer = (state = { items: '', imgArr: [] }, action) => {
         case 'ADD_IMAGES':
             return {
                 ...state,
-                imgArr: action.thumbnails
+                imgArrProps: action.imgInfo
             }
+        // case 'ADD_FULLSIZE_IMAGE':
+        //     return {
+        //         ...state,
+        //         fullsizeImage: action.fullImg
+        //     }
         default:
             return {
                 ...state

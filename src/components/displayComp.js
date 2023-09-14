@@ -6,9 +6,9 @@ export const CartDisplay = () => {
     console.log('items: ', items);
 
     return (
-        <div>
-            Hello ! This is a test output &nbsp;
-            {items !== '' ? <sup>{items}</sup> : undefined}
+        <div className="CartDisplay">
+            Shopping Cart &nbsp;
+            {items !== 0 ? <sup>{items}</sup> : undefined}
         </div>
     )
 }

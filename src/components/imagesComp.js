@@ -1,20 +1,24 @@
 import { useSelector, useDispatch } from "react-redux";
 import { addToCart } from "../actions/cartActions";
+import { Link } from "react-router-dom";
 
 export const Images = () => {
-    const { imgArr } = useSelector((state) => state.cart);
-    const dispatch = useDispatch();
+    const { imgArrProps } = useSelector((state) => state.cart);
+    // const dispatch = useDispatch();
 
-    const updateCart = (event) => {
+    // const updateCart = (event) => {
 
-        fetch(`https://dummyjson.com/products/${event.target.getAttribute('value')}`).then((response) => {
-            response.json().then((data) => {
-                dispatch(addToCart(data.title));
-            })
-        });
-    }
+    //     // fetch(`https://dummyjson.com/products/${event.target.getAttribute('value')}`).then((response) => {
+    //     //     response.json().then((data) => {
+    //     //         dispatch(addToCart(data.title));
+    //     //     })
+    //     // });
+    //     dispatch(addToCart(data.title));
+    // }
 
     return (
-        imgArr.map((image) => <img src={image.img} key={image.id} value={image.id} onClick={updateCart} />)
+        <div>
+            {imgArrProps.length > 1 ? imgArrProps.map((image) => <Link key={image.id} to={`/product/${image.id}`}><img src={image.img} key={image.id} value={image.id} /></Link>) : 'Loading.....'}
+        </div>
     )
 }

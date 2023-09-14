@@ -1,10 +1,11 @@
 import { useRef } from 'react'
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { addToCart } from '../actions/cartActions.js';
 
-export default () => {
+export default (props) => {
     const dispatch = useDispatch();
     const persistObject = useRef();
+
 
     if (persistObject.current == null) {
         persistObject.current = 0;
@@ -12,7 +13,7 @@ export default () => {
 
     const additionToCart = () => {
         persistObject.current = persistObject.current + 1;
-        fetch(`https://dummyjson.com/products/${persistObject.current}`).then((response) => {
+        fetch(`https://dummyjson.com/products/${props.id}`).then((response) => {
             response.json().then((data) => {
                 dispatch(addToCart(data.title));
             })

@@ -9,6 +9,13 @@ export const addToCart = (value) => {
 export const addImages = (imageArr) => {
     return {
         type: 'ADD_IMAGES',
-        thumbnails: imageArr
+        imgInfo: imageArr
     }
 }
+
+// export const addFullsizeImage = (fullSizeImage) => {
+//     return {
+//         type: 'ADD_FULLSIZE_IMAGE',
+//         fullImg: fullSizeImage
+//     }
+// }
