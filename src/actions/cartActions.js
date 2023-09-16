@@ -1,4 +1,3 @@
-
 export const addToCart = (value) => {
     return {
         type: 'ADD_ITEMS',
@@ -12,10 +11,3 @@ export const addImages = (imageArr) => {
         imgInfo: imageArr
     }
 }
-
-// export const addFullsizeImage = (fullSizeImage) => {
-//     return {
-//         type: 'ADD_FULLSIZE_IMAGE',
-//         fullImg: fullSizeImage
-//     }
-// }

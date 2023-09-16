@@ -1,5 +1,10 @@
+const stateObj = {
+    items: 0,
+    imgArrProps: [],
+    fullsizeImage: ''
+}
 
-export const cartReducer = (state = { items: 0, imgArrProps: [], fullsizeImage: '' }, action) => {
+export const cartReducer = (state = stateObj, action) => {
     switch (action.type) {
         case 'ADD_ITEMS':
             return {
@@ -11,11 +16,6 @@ export const cartReducer = (state = { items: 0, imgArrProps: [], fullsizeImage: 
                 ...state,
                 imgArrProps: action.imgInfo
             }
-        // case 'ADD_FULLSIZE_IMAGE':
-        //     return {
-        //         ...state,
-        //         fullsizeImage: action.fullImg
-        //     }
         default:
             return {
                 ...state

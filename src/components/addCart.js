@@ -1,5 +1,5 @@
 import { useRef } from 'react'
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
 import { addToCart } from '../actions/cartActions.js';
 
 export default (props) => {
@@ -21,9 +21,7 @@ export default (props) => {
     }
 
     return (
-        <button
-            onClick={additionToCart}
-        >
+        <button onClick={additionToCart}>
             Add to cart
         </button>
     )
