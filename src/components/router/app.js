@@ -4,8 +4,8 @@ import { ProductDetails } from '../productDetails';
 import { CartDisplay } from '../displayComp';
 
 import { createContext } from 'react';
-import { FileOne } from './fileOne';
-import { FileTwo } from './fileTwo';
+import { FileOne } from '../../playground/fileOne';
+import { FileTwo } from '../../playground/fileTwo';
 
 export const OwnContext = createContext();
 
@@ -14,16 +14,19 @@ export const App = () => {
 
         // <div>
         //     <OwnContext.Provider value={'Hello !'}>
+        //         {/* <FileOne>
+        //             <FileTwo />
+        //         </FileOne> */}
         //         <FileOne />
         //     </OwnContext.Provider>
 
-        //     <OwnContext.Provider value={'Hi'}>
+        //     <OwnContext.Provider value={'Hi !'}>
         //         <FileTwo />
         //     </OwnContext.Provider>
         // </div>
 
 
-        // for react-router with hooks like 'useParams()', 'useNavigate()'
+        // for react-router with hooks like 'useParams()', 'useNavigate() ie react-router-dom v5.2.0'
         <div>
             <CartDisplay />
             <BrowserRouter>
@@ -35,6 +38,7 @@ export const App = () => {
                 </Route>
             </BrowserRouter>
 
+            {/* // for react-router without hooks i.e react-router-dom v4.2.2*/}
             {/* <CartDisplay />
             <BrowserRouter>
                 <Switch>
