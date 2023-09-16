@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Images } from './imagesComp';
 import { addImages } from '../actions/cartActions';
+import { CartDisplay } from './displayComp';
 
 export const Upfront = () => {
     const dispatch = useDispatch();
@@ -21,6 +22,7 @@ export const Upfront = () => {
 
     return (
         <div className="container">
+            {/* <CartDisplay /> */}
             <Images />
             <br />
             <br />

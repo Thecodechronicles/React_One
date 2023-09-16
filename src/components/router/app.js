@@ -2,6 +2,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import { Upfront } from '../upFront';
 import { ProductDetails } from '../productDetails';
 import { CartDisplay } from '../displayComp';
+import { ItemsList } from '../itemsList';
 
 export const App = () => {
     return (
@@ -13,6 +14,9 @@ export const App = () => {
                 </Route>
                 <Route path="/product/:id">
                     <ProductDetails />
+                </Route>
+                <Route path="/items">
+                    <ItemsList />
                 </Route>
             </BrowserRouter>
         </div >
