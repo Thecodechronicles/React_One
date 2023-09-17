@@ -7,8 +7,8 @@ import { useHistory } from "react-router-dom"
 export default (props) => {
     const dispatch = useDispatch();
     // const prodInfo = useContext(OwnContext);
-    const prodInfo = props;
-    const { items, count } = useSelector((state) => state.cart);
+    const prodInfo = { ...props };
+    const { items } = useSelector((state) => state.cart);
     const history = useHistory();
 
     console.log('prodInfo: ', prodInfo);
@@ -19,8 +19,9 @@ export default (props) => {
         //         dispatch(addToCart(data.title));
         //     })
         // });
+        prodInfo.id = prodInfo.id + '_' + Math.random();
         dispatch(addToCart(prodInfo));
-        dispatch(itemCount(items.length + 1))
+        // dispatch(itemCount(items.length + 1))
     }
 
     return (
@@ -31,7 +32,7 @@ export default (props) => {
             <br />
             <br />
             <button onClick={() => {
-                if (count > 0) {
+                if (items.length > 0) {
                     history.push('/items');
                 }
             }}>

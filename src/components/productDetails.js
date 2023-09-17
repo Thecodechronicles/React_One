@@ -5,7 +5,7 @@ import { CartDisplay } from './displayComp';
 import AddToCart from './addCart';
 
 export const ProductDetails = (props) => {
-    const [fullsizeImage, setImage] = useState('');
+    const [{ title, fullsizeImage }, setProd] = useState({ title: '', fullsizeImage: '' });
     const params = useParams();
     const persistData = useRef();
 
@@ -19,7 +19,7 @@ export const ProductDetails = (props) => {
                 persistData.title = data.title;
                 persistData.price = data.price;
                 persistData.description = data.description;
-                setImage(data.images[0]);
+                setProd({ title: data.title, fullsizeImage: data.images[0] });
             });
         });
     }, [])
@@ -27,7 +27,8 @@ export const ProductDetails = (props) => {
     return (
         <div>
             {/* <CartDisplay /> */}
-            {fullsizeImage !== '' ? <img src={fullsizeImage} /> : 'Loading Image.....'}
+            {title !== '' ? <h3>{title}</h3> : undefined}
+            {fullsizeImage !== '' ? <img className="itemImage" src={fullsizeImage} /> : 'Loading Image.....'}
             <br />
             <br />
             {/* <OwnContext.Provider value={{ ...persistData }}>

@@ -1,7 +1,7 @@
 const stateObj = {
     items: [],
     imgArrProps: [],
-    count: 0
+    // count: 0
     // fullsizeImage: ''
 }
 
@@ -20,11 +20,11 @@ export const cartReducer = (state = stateObj, action) => {
                 ...state,
                 imgArrProps: action.imgInfo
             }
-        case 'ITEM_COUNT':
-            return {
-                ...state,
-                count: action.count
-            }
+        // case 'ITEM_COUNT':
+        //     return {
+        //         ...state,
+        //         count: action.count
+        //     }
         case 'REMOVE_ITEM':
             return {
                 ...state,

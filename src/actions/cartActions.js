@@ -12,12 +12,12 @@ export const addImages = (imageArr) => {
     }
 }
 
-export const itemCount = (count = 0) => {
-    return {
-        type: 'ITEM_COUNT',
-        count: count
-    }
-}
+// export const itemCount = (count = 0) => {
+//     return {
+//         type: 'ITEM_COUNT',
+//         count: count
+//     }
+// }
 
 export const removeItem = (itemsArr, id) => {
     return {

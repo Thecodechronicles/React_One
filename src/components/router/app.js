@@ -6,7 +6,7 @@ import { ItemsList } from '../itemsList';
 
 export const App = () => {
     return (
-        <div>
+        <div className="container">
             <CartDisplay />
             <BrowserRouter>
                 <Route path="/" exact={true}>

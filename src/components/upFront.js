@@ -21,7 +21,7 @@ export const Upfront = () => {
     }, [])
 
     return (
-        <div className="container">
+        <div>
             {/* <CartDisplay /> */}
             <Images />
             <br />

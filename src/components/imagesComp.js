@@ -15,7 +15,7 @@ export const Images = () => {
                             </Link>)
                     )
                     :
-                    'Loading.....'
+                    <span style={{ padding: '55px 0px', fontSize: '21px' }}>Loading.....</span>
             }
         </div>
     )
